@@ -9,8 +9,10 @@ class GolferSeeder extends Seeder
 {
     public function run(): void
     {
-        Golfer::factory()
-            ->count(100)
-            ->create();
+        for ($i = 1; $i <= 100; $i++) {
+            Golfer::factory()->create([
+                'debitor_account' => $i,
+            ]);
+        }
     }
 }
